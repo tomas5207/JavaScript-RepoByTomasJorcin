@@ -1,4 +1,4 @@
-var btn = document.getElementById('ppt');
+let btn = document.getElementById('ppt');
 
 
 

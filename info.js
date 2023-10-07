@@ -1,4 +1,4 @@
-var btn = document.getElementById('info');
+let btn = document.getElementById('info');
 
 function mensaje(){
     alert("Bienvenido a la sala de juegos");
