@@ -1,4 +1,4 @@
-let btn = document.getElementById('ruleta');
+var btn = document.getElementById('ruleta');
 
 function juego(){
     alert("Bienvenido a la ruleta rusa!")

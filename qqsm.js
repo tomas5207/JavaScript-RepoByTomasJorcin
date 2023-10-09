@@ -1,16 +1,9 @@
-let btn = document.getElementById('qqsm');
+var btn = document.getElementById('qqsm');
 
-let pregunta1_1 ={
-    pregunta :"¿?",
-    opcion1 :"",
-    opcion2 :"",
-    opcion3 :"",
-    opcion4 :""
-}
 
 
 function juego(){
-
+    
 }
 
 
