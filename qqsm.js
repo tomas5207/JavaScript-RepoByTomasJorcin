@@ -2,8 +2,9 @@ var btn = document.getElementById('qqsm');
 
 
 
+
 function juego(){
-    
+    alert("Proximamente....")
 }
 
 

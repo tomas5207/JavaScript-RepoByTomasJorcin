@@ -1,102 +1,66 @@
 var btn = document.getElementById('palabra');
 
-let palabra1 = new Object();
-palabra1.palabra = "Lana";
-palabra1.pista = "Producto obtenido tras esquilar una obeja";
-
-let palabra2 = new Object();
-palabra2.palabra = "Oreo";
-palabra2.pista = "Galletas famosas de color negro y blanco";
-
-let palabra3 = new Object();
-palabra3.palabra = "Oso";
-palabra3.pista = "Animal grande y peludo que duerme durante todo el invierno";
-
-let palabra4 = new Object();
-palabra4.palabra = "Vino";
-palabra4.pista = "Bebida alcohólica que en el cristianismo es conocida como la sangre de Cristo";
-
-let palabra5 = new Object();
-palabra5.palabra = "Hierro";
-palabra5.pista = "Elemento químico que ademas de ser un metal forma parte del ser humano";
-
-function Jugador(nombre, aciertos, errores){
-    this.nombre = nombre;
-    this.aciertos = aciertos;
-    this.errores = errores;
+function Palabra(palabra, pista){
+    this.palabra = palabra;
+    this.pista = pista;
 }
 
 
+let palabra1 = new Palabra("Lana", "Producto obtenido tras esquilar una obeja");
+let palabra2 = new Palabra("Oreo", "Galletas famosas de color negro y blanco");
+let palabra3 = new Palabra("Oso", "Animal grande y peludo que duerme durante todo el invierno");
+let palabra4 = new Palabra("Vino", "Bebida alcohólica que en el cristianismo es conocida como la sangre de Cristo");
+let palabra5 = new Palabra("Hierro", "Elemento químico que ademas de ser un metal forma parte del ser humano");
+
+let carta1 = [palabra1 , palabra2, palabra3, palabra4, palabra5];
+
+const palabrasCarta1 = carta1.map((el)=>el.palabra);
+const pistasCarta1 = carta1.map((el)=>el.pista);
+
+
+let palabra6 = new Palabra("Goma", "Material inmune a la electricidad utilizado como objeto para borrar cosas escritas");
+let palabra7 = new Palabra("Pescado", "Pez fuera del agua");
+let palabra8 = new Palabra("Desierto", "Lugar lleno de arena donde hace mucho calor de dia y mucho frio de noche");
+let palabra9 = new Palabra("Béisbol", "Segundo deporte que jugo profesionalmente Michael Jordan en su carrera deportiva");
+let palabra10 = new Palabra("Azufre", "Elemento quimico que se ubica en los volcanes con olor a huevos podridos");
+
+let carta2 = [palabra6 , palabra7, palabra8, palabra9, palabra10];
+
+const palabrasCarta2 = carta2.map((el)=>el.palabra);
+const pistasCarta2 = carta2.map((el)=>el.pista);
+
+let palabra11 = new Palabra("Perro", "Animal cuadrupedo mejor conocido como el mejor amigo del hombre");
+let palabra12 = new Palabra("Wisky", "Bebida alcohólica muy popular la cual tiene un meme del coco basile mencionando el blue label de johnnie walker");
+let palabra13 = new Palabra("Rojo", "Color primario asociado a carteles de transito, cemaforos, partes vitales del cuerpo humano, etc");
+let palabra14 = new Palabra("Vidrio", "Material que se obtiene al calentar arena de silice");
+let palabra15 = new Palabra("Bateria", "Instrumento de percusión tipico e indispensable en cualquier banda");
+
+let carta3 = [palabra11, palabra12, palabra13, palabra14, palabra15];
+
+const palabrasCarta3 = carta3.map((el)=>el.palabra);
+const pistasCarta3 = carta3.map((el)=> el.pista);
+
+let palabra16 = new Palabra("Pepsi", "Bebida gaseosa rival de Coca-cola");
+let palabra17 = new Palabra("Alquimia", "Antigua practica protocientifica que combina varias materias conocidas a dia de hoy");
+let palabra18 = new Palabra("Futbol", "Deporte mundialmente conocido como el rey de los deportes");
+let palabra19 = new Palabra("Pan", "Comida hecha de pura masa y harina que sabe mucho mejor recien salida del horno");
+let palabra20 = new Palabra("Brujula", "Objeto muy utilizado por antiguos navegantes de barcos para orientarse");
+
+let carta4 = [palabra16, palabra17, palabra18, palabra19, palabra20];
+
+const palabrasCarta4 = carta4.map((el)=>el.palabra);
+const pistasCarta4 = carta4.map((el)=>el.pista);
+
+let aciertos = 0;
+let errores = 0;
+
 
 function juego(){
+    console.log(palabrasCarta1);
+    console.log(pistasCarta1);
     alert("Bienvenido a adivina la palabra!")
-    alert("En este juego tendras que adivinar la mayor cantidad de palabras posible")
-    alert("Si consigues obtener un mayor numero de aciertos antes que de errores GANAS!")
-    alert("De lo contrario, PIERDES!")
-    alert("Antes de empezar, escribe tu nombre de para esta partida")
-    let name = prompt("escribe tu nombre")
-    let jugador = new Jugador(name, 0 , 0);
-    alert("Con que:" + " " +jugador.nombre + " " +"encantado de conocerte!")
-    alert("Muy bien" + " " + jugador.nombre)
-    alert("COMENCEMOS!")
-    let adivina1 = prompt("Primera palabra:" + " " + palabra1.pista)
-    if(adivina1 == palabra1.palabra){
-        alert("CORRECTO!")
-        jugador.aciertos++;
-    }else{
-        alert("INCORRECTO!. La respuesta correcta era:" + " " + palabra1.palabra)
-        jugador.errores++;
-    }
-    let adivina2 = prompt("Segunda palabra:" + " " + palabra2.pista)
-    if(adivina2 == palabra2.palabra){
-        alert("CORRECTO!")
-        jugador.aciertos++;
-    }
-    else{
-        alert("INCORRECTO!. La respuesta correcta era:" + " " + palabra2.palabra)
-        jugador.errores++;
-    }
-    let adivina3 = prompt("Tercera palabra:" + " " + palabra3.pista)
-    if(adivina3 == palabra3.palabra){
-        alert("CORRECTO!")
-        jugador.aciertos++;
-    }
-    else{
-        alert("INCORRECTO!. La respuesta correcta era:" + " " + palabra3.palabra)
-        jugador.errores++;
-    }
-    let adivina4 = prompt("Cuarta palabra:" + " " + palabra4.pista)
-    if(adivina4 == palabra4.palabra){
-        alert("CORRECTO!")
-        jugador.aciertos++;
-    }else{
-        alert("INCORRECTO!. La respuesta correcta era:" + " " + palabra4.palabra)
-        jugador.errores++;
-    }
-    let adivina5 = prompt("Quinta palabra:" + " " + palabra5.pista)
-    if(adivina5 == palabra5.palabra){
-        alert("CORRECTO!")
-        jugador.aciertos++;
-    }else{
-        alert("INCORRECTO!. La respuesta correcta era:" + " " + palabra5.palabra)
-        jugador.errores++;
-    }
-    alert("SE ACABARON LAS PALABRAS!")
-    alert("Aqui estan los resultados:")
-    if(jugador.aciertos>jugador.errores){
-        alert("Cantidad de aciertos: " + jugador.aciertos)
-        alert("Cantidad de errores: " + jugador.errores)
-        alert("FELICIDADES: " + " " +jugador.nombre + " " + "GANASTE!")
-    }
-    else if(jugador.aciertos<jugador.errores){
-        alert("Cantidad de aciertos: " + jugador.aciertos)
-        alert("Cantidad de errores: " + jugador.errores)
-        alert("Lo siento: " + " " +jugador.nombre + " " + "perdiste, mejor suerte la proxima :(")
-    }else if(jugador.aciertos==jugador.errores){
-        alert("Cantidad de aciertos: " + jugador.aciertos)
-        alert("Cantidad de errores: " + jugador.errores)
-        alert("WOW: " + " " +jugador.nombre + " " + "¿EMPATASTE?!. ¿Eso es bueno o malo? :/")
-    }
+    alert("Este juego consiste en tomar una carta con 5 pistas para adivinar 5 palabras")
+    alert("Si adivinas la palabra esta")
 }
 
 

@@ -3,7 +3,7 @@ var btn = document.getElementById('ppt');
 
 
 function juego(){
-    alert("Bienvenido a piedra, papel o tijera!")
+    alert("Bienvenido a piedra, papel o tijeras!")
     alert("En este juego tendra que elegir una de las siguientes opciones")
     alert("Piedra el cual es equivalente a 0")
     alert("Papel el cual es equivalente a 1")
