@@ -9,6 +9,7 @@ function juego(){
     alert("De lo contrario si sale disparo, al jugador del cual sea su turno....")
     alert("PIERDE!")
     alert("Dando como ganador el jugador que no recibio el disparo!")
+    alert("listo?")
     alert("COMENCEMOS!")
     let pistola = Math.floor(Math.random()*6)
     switch(pistola){

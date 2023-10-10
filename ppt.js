@@ -10,6 +10,7 @@ function juego(){
     alert("O tijeras que es equivalente a 2")
     alert("la maquina hara su jugada al azar y si elige la opción correcta ganara")
     alert("de lo contrario perdera o empatara")
+    alert("listo?")
     alert("COMENCEMOS!")
     let eleccion = Number(prompt("Eliga piedra=0 , papel=1 o tijeras=2"))
     let num = Math.floor(Math.random() * 3)
