@@ -50,6 +50,9 @@ function juego(){
     else if(eleccion==2 && num==2){
         alert("Tijeras chocan contra tijeras!.")
         alert("empate :/")
+    }else{
+        alert("Elección de movimiento invalida.")
+        alert("Ingrese 0 , 1 o 2 la proxima vez para usar piedra, papel o tijeras")
     }
 }
 
