@@ -1,4 +1,5 @@
 var btn = document.getElementById('palabra');
+var containerA = document.getElementById('palabraJuego');
 
 function Palabra(palabra, pista){
     this.palabra = palabra;
@@ -51,311 +52,335 @@ let carta4 = [palabra16, palabra17, palabra18, palabra19, palabra20];
 const palabrasCarta4 = carta4.map((el)=>el.palabra);
 const pistasCarta4 = carta4.map((el)=>el.pista);
 
-
+var aciertos = 0;
+var errores = 0;
+var puntuacion = 0;
 
 
 function juego(){
-    alert("Bienvenido a adivina la palabra!")
-    alert("Este juego consiste en tomar una carta con 5 pistas para adivinar 5 palabras")
-    alert("Teniendo hasta 8 oportunidades como mucho para adivinar las 5 palabras")
-    alert("Si adivinas las 5 palabras de la carta seleccionada GANAS")
-    alert("Pero si gastas las 8 oportunidades para adivinar las palabras PIERDES")
-    alert("Al final de la partida aparecera un marcador independientemente del resultado, el cual mostrara tu puntaje final")
-    alert("Dicho puntaje depende del numero de aciertos y errores")
-    alert("Por cada acierto sumara 9 puntos")
-    alert("Mientras que cada error restara 3 puntos")
-    alert("Consejo: si escribes una palabra ya descubierta, en minusculas o mal escrita la palabra sera considerada incorrecta")
-    alert("Esta version de adivina la palabra es una versión de prueba")
-    alert("Por lo que puede que en futuras entregas el desarrollo al rededor de este juego continue")
-    alert("Desarrollo que no solo le brindara nuevo contenido como más cartas o un sistema de puntuacion mejorado, sino que ademas se corregira un bug que hay actualmente en el juego")
-    alert("Dicho bug es uno en el cual es necesario salir de la pagina de la sala de juegos para jugar con la misma carta debido a ciertos detalles del como funciona el codigo del juego")
-    alert("De todas maneras no es algo que afecte en gran medida al juego más alla de tener que salir y volver a entrar a la pagina")
-    alert("Por lo que al tratarse de una versión de prueba, lo dejare por el momento tal cual, para que en una futura entrega que no se si sera la siguiente o la final desarrollar la version definitiva")
-    alert("Dicho todo esto....")
-    alert("listo?")
-    alert("COMENCEMOS!")
-    let aciertos = 0;
-    let errores = 0;
-    let puntuacion = 0;
-    let seleccionCarta = Number(prompt("Elige un numero del 1 al 4 para seleccionar una carta"))
-    if(seleccionCarta==1){
-        do{
-            var escribePalabra=palabrasCarta1.indexOf(prompt(pistasCarta1))
-            if(escribePalabra===-1){
+    containerA.innerHTML = "<span class='textoGenerado'>Bienvenido a adivina la palabra!</span><button onClick='parte2A()'>Siguiente</button>"
+    console.log(aciertos);
+}
+
+function parte2A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Este juego consiste en tomar una carta con 5 pistas para adivinar 5 palabras</span><button onClick='parte3A()'>Siguiente</button>"
+}
+
+function parte3A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Teniendo hasta 8 oportunidades como mucho para adivinar las 5 palabras</span><button onClick='parte4A()'>Siguiente</button>"
+}
+
+function parte4A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Si adivinas las 5 palabras de la carta seleccionada GANAS</span><button onClick='parte5A()'>Siguiente</button>"
+}
+
+function parte5A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Pero si gastas las 8 oportunidades para adivinar las palabras PIERDES</span><button onClick='parte6A()'>Siguiente</button>"
+}
+
+function parte6A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Al final de la partida aparecera un marcador independientemente del resultado, el cual mostrara tu puntaje final</span><button onClick='parte7A()'>Siguiente</button>"
+}
+
+function parte7A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Dicho puntaje depende del numero de aciertos y errores</span><button onClick='parte8A()'>Siguiente</button>"
+}
+
+function parte8A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Por cada acierto sumara 9 puntos</span><button onClick='parte9A()'>Siguiente</button>"
+}
+
+function parte9A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Mientras que cada error restara 3 puntos</span><button onClick='parte10A()'>Siguiente</button>"   
+}
+
+function parte10A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Consejo: si escribes una palabra ya descubierta, en minusculas o mal escrita la palabra sera considerada incorrecta</span><button onClick='parte11A()'>Siguiente</button>"
+}
+
+function parte11A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Esta versión sigue estando en posible desarrollo</span><button onClick='parte12A()'>Siguiente</button>"
+}
+
+function parte12A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Ya que al haber un cambio en la funcionabilidad de la sala la forma de desarrollar el codigo cambia</span><button onClick='parte13A()'>Siguiente</button>"
+}
+
+function parte13A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Por ello las irregularidades con respecto a este juego dichas en la entrega pasada siguen vigentes</span><button onClick='parte14A()'>Siguiente</button>"
+}
+
+function parte14A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Sin embargo ya para la entrega final tratare de solucionar dichas irregularidades para que se disfrute más el juego</span><button onClick='parte15A()'>Siguiente</button>"
+}
+
+function parte15A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Y quizas añada más cartas como prometí</span><button onClick='parte16A()'>Siguiente</button>"
+}
+
+function parte16A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Dicho todo esto....</span><button onClick='parte17A()'>Siguiente</button>"
+}
+
+function parte17A(){
+    containerA.innerHTML = "<span class='textoGenerado'>listo?</span><button onClick='parte18A()'>Siguiente</button>"
+}
+
+function parte18A(){
+    containerA.innerHTML = "<span class='textoGenerado'>COMENCEMOS!</span><button onClick='parte19A()'>Siguiente</button>"
+}
+
+function parte19A(){
+    containerA.innerHTML = "<span class='textoGenerado'>Elige un numero del 1 al 4 para seleccionar una carta</span><input id='seleccion' type='number'><button id='aceptar3'>Aceptar</button>"
+    document.getElementById('aceptar3').onclick = function(){
+        var seleccion = document.getElementById("seleccion").value;
+        if(seleccion==1){
+
+        let opcion1 = "<ul>";
+        
+        for(let pistas of pistasCarta1){
+            opcion1 += `<li>${pistas}</li>`;
+        }
+
+        opcion1 += "</ul>";
+        opcion1 += "<input type='text' id='palabras1'>";
+        opcion1 += "<button id='AceptarPalabra1'>Aceptar</button>";
+
+        containerA.innerHTML = opcion1;
+        document.getElementById('AceptarPalabra1').onclick = function(){
+            var word1 = document.getElementById("palabras1").value;
+            var palabraEscrita = palabrasCarta1.indexOf(word1);
+            if(palabraEscrita===-1){
                 alert("Palabra no encontrada o ya descubierta. Sigue probando")
                 errores++;
                 puntuacion-=3;
-                console.log(errores)
+            }else{
+                alert("Palabra encontrada")
+                aciertos++;
+                puntuacion+=9;
+                delete(palabrasCarta1[palabraEscrita])
+                delete(pistasCarta1[palabraEscrita])
+                actualizarPistas(pistasCarta1, seleccion);
+            }
+        }
+
+        }else if(seleccion==2){
+            
+        let opcion2 = "<ul>";
+        
+        for(let pistas of pistasCarta2){
+            opcion2 += `<li>${pistas}</li>`;
+        }
+
+        opcion2 += "</ul>";
+        opcion2 += "<input type='text' id='palabras2'>";
+        opcion2 += "<button id='AceptarPalabra2'>Aceptar</button>";
+
+        containerA.innerHTML = opcion2;
+        document.getElementById('AceptarPalabra2').onclick = function(){
+            var word2 = document.getElementById("palabras2").value;
+            var palabraEscrita = palabrasCarta2.indexOf(word2);
+            if(palabraEscrita===-1){
+                alert("Palabra no encontrada o ya descubierta. Sigue probando")
+                errores++;
+                puntuacion-=3;
+            }else{
+                alert("Palabra encontrada")
+                aciertos++;
+                puntuacion+=9;
+                delete(palabrasCarta2[palabraEscrita])
+                delete(pistasCarta2[palabraEscrita])
+                actualizarPistas(pistasCarta2, seleccion);
+            }
+        }
+
+        }else if(seleccion==3){
+            
+        let opcion3 = "<ul>";
+        
+        for(let pistas of pistasCarta3){
+            opcion3 += `<li>${pistas}</li>`;
+        }
+
+        opcion3 += "</ul>";
+        opcion3 += "<input type='text' id='palabras3'>";
+        opcion3 += "<button id='AceptarPalabra3'>Aceptar</button>";
+
+        containerA.innerHTML = opcion3;
+        document.getElementById('AceptarPalabra3').onclick = function(){
+            var word3 = document.getElementById("palabras3").value;
+            var palabraEscrita = palabrasCarta3.indexOf(word3);
+            if(palabraEscrita===-1){
+                alert("Palabra no encontrada o ya descubierta. Sigue probando")
+                errores++;
+                puntuacion-=3;
+            }else{
+                alert("Palabra encontrada")
+                aciertos++;
+                puntuacion+=9;
+                delete(palabrasCarta3[palabraEscrita])
+                delete(pistasCarta3[palabraEscrita])
+                actualizarPistas(pistasCarta3, seleccion);
+            }
+        }
+
+        }else if(seleccion==4){
+        let opcion4 = "<ul>";
+        
+        for(let pistas of pistasCarta4){
+            opcion4 += `<li>${pistas}</li>`;
+        }
+
+        opcion4 += "</ul>";
+        opcion4 += "<input type='text' id='palabras4'>";
+        opcion4 += "<button id='AceptarPalabra4'>Aceptar</button>";
+
+        containerA.innerHTML = opcion4;
+        document.getElementById('AceptarPalabra4').onclick = function actualizarPistas(pistas){
+            var word4 = document.getElementById("palabras4").value;
+            var palabraEscrita = palabrasCarta4.indexOf(word4);
+            if(palabraEscrita===-1){
+                alert("Palabra no encontrada o ya descubierta. Sigue probando")
+                errores++;
+                puntuacion-=3;
             }else{
                 alert("Palabra encontrada")
                 aciertos++;
                 puntuacion+=9;
                 console.log(aciertos)
-                if(escribePalabra==0){
-                delete(palabrasCarta1[0])
-                }else if(escribePalabra==1){
-                delete(palabrasCarta1[1])
-                }else if(escribePalabra==2){
-                delete(palabrasCarta1[2])
-                }else if(escribePalabra==3){
-                delete(palabrasCarta1[3])
-                }else if(escribePalabra==4){
-                delete(palabrasCarta1[4])
-                }
-                if(escribePalabra==0){
-                delete(pistasCarta1[0])
-                }
-                else if(escribePalabra==1){
-                delete(pistasCarta1[1])
-                }
-                else if(escribePalabra==2){
-                delete(pistasCarta1[2])
-                }
-                else if(escribePalabra==3){
-                delete(pistasCarta1[3])
-                }
-                else if(escribePalabra==4){
-                delete(pistasCarta1[4])
-                }
+                delete(palabrasCarta4[palabraEscrita])
+                delete(pistasCarta4[palabraEscrita])
+                actualizarPistas(pistasCarta4, seleccion);
             }
-            
-        }while(aciertos!=5 && errores!=8)
-        
-        if(aciertos==5){
-            alert("ADIVINASTE TODAS LAS PALABRAS!")
-            alert("GANASTE!")
-            alert("Tu puntuación final es de:" + puntuacion)
-        }else if(aciertos==4){
-            alert("UYYYY POR POQUITO!")
-            alert("Perdiste :(")
-            alert("Tu puntuación final es de:" + puntuacion)
-        }else if(aciertos==3){
-            alert("No esta mal. Mejor suerte la proxima :)")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion)
-        }else if(aciertos==2){
-            alert("2 aciertos de 5?. Bueno. Podría ser peor")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion)
-        }else if(aciertos==1){
-            alert("Eh?. Solo acertaste 1?. Más diccionario y menos reggaeton para la proxima xd")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion + "?" + " " + "¿en serio eso es lo mejor que puedes hacer?.Bue....")
-        }else if(aciertos==0){
-            alert("LOCO. ¿COMO NO VAS A ACERTAR NI 1?. PONETE LAS PILAS DALE. REPASA EL DICCIONARIO COMPLETOOOOOOO!")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion + "?" + " " + "sin comentarios.....")
         }
-    } else if(seleccionCarta==2){
-        do{
-            var escribePalabra=palabrasCarta2.indexOf(prompt(pistasCarta2))
-            if(escribePalabra===-1){
-                alert("Palabra no encontrada o ya descubierta. Sigue probando")
-                errores++;
-                puntuacion-=3;
-                console.log(errores)
-            }else{
-                alert("Palabra encontrada")
-                aciertos++;
-                puntuacion+=9;
-                console.log(aciertos)
-                if(escribePalabra==0){
-                delete(palabrasCarta2[0])
-                }else if(escribePalabra==1){
-                delete(palabrasCarta2[1])
-                }else if(escribePalabra==2){
-                delete(palabrasCarta2[2])
-                }else if(escribePalabra==3){
-                delete(palabrasCarta2[3])
-                }else if(escribePalabra==4){
-                delete(palabrasCarta2[4])
-                }
-                if(escribePalabra==0){
-                delete(pistasCarta2[0])
-                }
-                else if(escribePalabra==1){
-                delete(pistasCarta2[1])
-                }
-                else if(escribePalabra==2){
-                delete(pistasCarta2[2])
-                }
-                else if(escribePalabra==3){
-                delete(pistasCarta2[3])
-                }
-                else if(escribePalabra==4){
-                delete(pistasCarta2[4])
-                }
-            }
-            
-        }while(aciertos!=5 && errores!=8)
-        
-        if(aciertos==5){
-            alert("ADIVINASTE TODAS LAS PALABRAS!")
-            alert("GANASTE!")
-            alert("Tu puntuación final es de:" + puntuacion)
-        }else if(aciertos==4){
-            alert("UYYYY POR POQUITO!")
-            alert("Perdiste :(")
-            alert("Tu puntuación final es de:" + puntuacion)
-        }else if(aciertos==3){
-            alert("No esta mal. Mejor suerte la proxima :)")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion)
-        }else if(aciertos==2){
-            alert("2 aciertos de 5?. Bueno. Podría ser peor")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion)
-        }else if(aciertos==1){
-            alert("Eh?. Solo acertaste 1?. Más diccionario y menos reggaeton para la proxima xd")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion + "?" + " " + "¿en serio eso es lo mejor que puedes hacer?.Bue....")
-        }else if(aciertos==0){
-            alert("LOCO. ¿COMO NO VAS A ACERTAR NI 1?. PONETE LAS PILAS DALE. REPASA EL DICCIONARIO COMPLETOOOOOOO!")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion + "?" + " " + "sin comentarios.....")
+        }else{
+            containerA.innerHTML= "<span class='textoGenerado'>La carta que usted selecciono es inexistente</span><button onClick='parte19A()'>Volver</button>"
         }
-    }else if(seleccionCarta==3){
-        do{
-            var escribePalabra=palabrasCarta3.indexOf(prompt(pistasCarta3))
-            if(escribePalabra===-1){
-                alert("Palabra no encontrada o ya descubierta. Sigue probando")
-                errores++;
-                puntuacion-=3;
-                console.log(errores)
-            }else{
-                alert("Palabra encontrada")
-                aciertos++;
-                puntuacion+=9;
-                console.log(aciertos)
-                if(escribePalabra==0){
-                delete(palabrasCarta3[0])
-                }else if(escribePalabra==1){
-                delete(palabrasCarta3[1])
-                }else if(escribePalabra==2){
-                delete(palabrasCarta3[2])
-                }else if(escribePalabra==3){
-                delete(palabrasCarta3[3])
-                }else if(escribePalabra==4){
-                delete(palabrasCarta3[4])
-                }
-                if(escribePalabra==0){
-                delete(pistasCarta3[0])
-                }
-                else if(escribePalabra==1){
-                delete(pistasCarta3[1])
-                }
-                else if(escribePalabra==2){
-                delete(pistasCarta3[2])
-                }
-                else if(escribePalabra==3){
-                delete(pistasCarta3[3])
-                }
-                else if(escribePalabra==4){
-                delete(pistasCarta3[4])
-                }
-            }
-            
-        }while(aciertos!=5 && errores!=8)
-        
-        if(aciertos==5){
-            alert("ADIVINASTE TODAS LAS PALABRAS!")
-            alert("GANASTE!")
-            alert("Tu puntuación final es de:" + puntuacion)
-        }else if(aciertos==4){
-            alert("UYYYY POR POQUITO!")
-            alert("Perdiste :(")
-            alert("Tu puntuación final es de:" + puntuacion)
-        }else if(aciertos==3){
-            alert("No esta mal. Mejor suerte la proxima :)")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion)
-        }else if(aciertos==2){
-            alert("2 aciertos de 5?. Bueno. Podría ser peor")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion)
-        }else if(aciertos==1){
-            alert("Eh?. Solo acertaste 1?. Más diccionario y menos reggaeton para la proxima xd")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion + "?" + " " + "¿en serio eso es lo mejor que puedes hacer?.Bue....")
-        }else if(aciertos==0){
-            alert("LOCO. ¿COMO NO VAS A ACERTAR NI 1?. PONETE LAS PILAS DALE. REPASA EL DICCIONARIO COMPLETOOOOOOO!")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion + "?" + " " + "sin comentarios.....")
-        }
-    }else if(seleccionCarta==4){
-        do{
-            var escribePalabra=palabrasCarta4.indexOf(prompt(pistasCarta3))
-            if(escribePalabra===-1){
-                alert("Palabra no encontrada o ya descubierta. Sigue probando")
-                errores++;
-                puntuacion-=3;
-                console.log(errores)
-            }else{
-                alert("Palabra encontrada")
-                aciertos++;
-                puntuacion+=9;
-                console.log(aciertos)
-                if(escribePalabra==0){
-                delete(palabrasCarta1[0])
-                }else if(escribePalabra==1){
-                delete(palabrasCarta1[1])
-                }else if(escribePalabra==2){
-                delete(palabrasCarta1[2])
-                }else if(escribePalabra==3){
-                delete(palabrasCarta1[3])
-                }else if(escribePalabra==4){
-                delete(palabrasCarta1[4])
-                }
-                if(escribePalabra==0){
-                delete(pistasCarta1[0])
-                }
-                else if(escribePalabra==1){
-                delete(pistasCarta1[1])
-                }
-                else if(escribePalabra==2){
-                delete(pistasCarta1[2])
-                }
-                else if(escribePalabra==3){
-                delete(pistasCarta1[3])
-                }
-                else if(escribePalabra==4){
-                delete(pistasCarta1[4])
-                }
-            }
-            
-        }while(aciertos!=5 && errores!=8)
-        
-        if(aciertos==5){
-            alert("ADIVINASTE TODAS LAS PALABRAS!")
-            alert("GANASTE!")
-            alert("Tu puntuación final es de:" + puntuacion)
-        }else if(aciertos==4){
-            alert("UYYYY POR POQUITO!")
-            alert("Perdiste :(")
-            alert("Tu puntuación final es de:" + puntuacion)
-        }else if(aciertos==3){
-            alert("No esta mal. Mejor suerte la proxima :)")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion)
-        }else if(aciertos==2){
-            alert("2 aciertos de 5?. Bueno. Podría ser peor")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion)
-        }else if(aciertos==1){
-            alert("Eh?. Solo acertaste 1?. Más diccionario y menos reggaeton para la proxima xd")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion + "?" + " " + "¿en serio eso es lo mejor que puedes hacer?.Bue....")
-        }else if(aciertos==0){
-            alert("LOCO. ¿COMO NO VAS A ACERTAR NI 1?. PONETE LAS PILAS DALE. REPASA EL DICCIONARIO COMPLETOOOOOOO!")
-            alert("Perdiste :(")
-            alert("Tu puntuacion final es de:" + puntuacion + "?" + " " + "sin comentarios.....")
-        }
-    }else{
-        alert("La carta que usted selecciono es inexistente")
     }
 }
 
 
+function actualizarPistas(pistas, seleccion) {
+    let listaPistasHTML = "<ul>";
+
+    for(let pista of pistas){
+        listaPistasHTML += `<li>${pista}</li>`;
+    }
+
+    listaPistasHTML += "</ul>";
+    listaPistasHTML += "<input type='text' id='nuevaPalabra'>";
+    listaPistasHTML += "<button id='aceptarPalabra'>Aceptar</button>";
+
+    containerA.innerHTML = listaPistasHTML; 
+
+    document.getElementById('aceptarPalabra').onclick = function(){
+        var nuevaPalabra = document.getElementById('nuevaPalabra').value;
+        
+        if(seleccion == 1){
+            var palabraEscrita = palabrasCarta1.indexOf(nuevaPalabra);
+            if(palabraEscrita===-1){
+                alert("Palabra no encontrada o ya descubierta. Sigue probando")
+                errores++;
+                puntuacion-=3;
+            }else{
+                alert("Palabra encontrada")
+                aciertos++;
+                puntuacion+=9;
+                delete(palabrasCarta1[palabraEscrita])
+                delete(pistasCarta1[palabraEscrita])
+                actualizarPistas(pistasCarta1, 1);
+            }
+        }else if(seleccion == 2){
+            var palabraEscrita = palabrasCarta2.indexOf(nuevaPalabra);
+            if(palabraEscrita===-1){
+                alert("Palabra no encontrada o ya descubierta. Sigue probando")
+                errores++;
+                puntuacion-=3;
+            }else{
+                alert("Palabra encontrada")
+                aciertos++;
+                puntuacion+=9;
+                delete(palabrasCarta2[palabraEscrita])
+                delete(pistasCarta2[palabraEscrita])
+                actualizarPistas(pistasCarta2, 2);
+            }
+        }else if(seleccion == 3){
+            var palabraEscrita = palabrasCarta3.indexOf(nuevaPalabra);
+            if(palabraEscrita===-1){
+                alert("Palabra no encontrada o ya descubierta. Sigue probando")
+                errores++;
+                puntuacion-=3;
+            }else{
+                alert("Palabra encontrada")
+                aciertos++;
+                puntuacion+=9;
+                delete(palabrasCarta3[palabraEscrita])
+                delete(pistasCarta3[palabraEscrita])
+                actualizarPistas(pistasCarta3, 3);
+            }
+        }else if(seleccion == 4){
+            var palabraEscrita = palabrasCarta4.indexOf(nuevaPalabra);
+            if(palabraEscrita===-1){
+                alert("Palabra no encontrada o ya descubierta. Sigue probando")
+                errores++;
+                puntuacion-=3;
+            }else{
+                alert("Palabra encontrada")
+                aciertos++;
+                puntuacion+=9;
+                delete(palabrasCarta4[palabraEscrita])
+                delete(pistasCarta4[palabraEscrita])
+                actualizarPistas(pistasCarta4, 4);
+            }
+        }
+
+
+        if(aciertos == 5 && errores == 0 || aciertos == 5 && errores == 7 || aciertos == 5 && errores == 6 || aciertos == 5 && errores == 5 
+            || aciertos == 5 && errores == 4 || aciertos == 5 && errores == 3 || aciertos == 5 && errores == 2 || aciertos == 5 && errores == 1){
+            
+            containerA.innerHTML = `<span class='textoGenerado'>ADIVINASTE TODAS LAS PALABRAS!. GANASTE!. Tu puntuacion final es de: ${puntuacion}</span>`
+            aciertos = 0;
+            errores = 0;
+            puntuacion = 0;
+            
+        }else if(aciertos == 4 && errores==8){
+
+            containerA.innerHTML = `<span class='textoGenerado'>UUUUYYY POR POQUITO!. Perdiste :(. Tu puntuacion final es de: ${puntuacion}</span>`
+            aciertos = 0;
+            errores = 0;
+            puntuacion = 0;
+
+        }else if(aciertos == 3 && errores==8){
+            
+            containerA.innerHTML = `<span class='textoGenerado'>No esta mal, mejor suerte la proxima. Perdiste :(. Tu puntuacion final es de: ${puntuacion}</span>`
+            aciertos = 0;
+            errores = 0;
+            puntuacion = 0;
+
+        }else if(aciertos == 2 && errores==8){
+
+            containerA.innerHTML = `<span class='textoGenerado'> 2 aciertos de 5?. Bue, podría ser peor. Perdiste :(. Tu puntuacion final es de: ${puntuacion}</span>`
+            aciertos = 0;
+            errores = 0;
+            puntuacion = 0;
+
+        }else if(aciertos == 1 && errores==8){
+
+            containerA.innerHTML = `<span class='textoGenerado'>Eh?. ¿Solo acertaste 1?. Más diccionario y menos reggaeton xd. Perdiste :(. Tu puntuacion final es de: ${puntuacion}</span>`
+            aciertos = 0;
+            errores = 0;
+            puntuacion = 0;
+
+        }else if(aciertos == 0 && errores==8){
+
+            containerA.innerHTML = `<span class='textoGenerado'>¿COMO CARAJOS NO VAS ACERTAR NI UNA?. DALE HERMANO!. PERDISTE BURRO >:(. Tu puntuacion final es de: ${puntuacion}</span>`
+            aciertos = 0;
+            errores = 0;
+            puntuacion = 0;
+
+        }
+    }
+}
 
 
 

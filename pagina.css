@@ -19,3 +19,36 @@ div{
     color: #c1fa05;
 }
 
+.infoText{
+    font-size: 20px;
+}
+
+.textoGenerado{
+    font-size: 20px;
+    animation: teclear 1s steps(16), efecto .5s step-end infinite alternate;
+}
+
+.playerList{
+    font-size: 25px;
+}
+
+
+@keyframes teclear {
+    from {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes efecto {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+
+
+
