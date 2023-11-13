@@ -1,7 +1,5 @@
 main{
     background-color: #3b3a38;
-    width: 100%;
-    height: 2000px;
 }
 
 button{
@@ -14,10 +12,43 @@ button{
     text-decoration: none;
 }
 
-div{
+.sala{
+    width: 100%;
+    height: 2000px;
+}
+
+.mainC{
+    width: 100%;
+    height: 740px;
+    max-width: 100% !important;
+}
+
+.titulo{
+    color: #c1fa05;
+}
+
+.titulo1{
+    color: #c1fa05;
+    text-decoration: underline;
+    padding-left: 450px;
+}
+
+.container{
     background-color: #0a0a0a;
     color: #c1fa05;
 }
+
+.contenedor{
+    position: relative;
+}
+
+.contenido{
+    position: relative;
+    width: 1000px;
+    height: 100%;
+    left:500px;
+}
+
 
 .infoText{
     font-size: 20px;
