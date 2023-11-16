@@ -57,7 +57,12 @@ function parte8N(){
     document.getElementById('aceptar2').onclick = function (){
         var numeroE = document.getElementById("eleccion").value;
             if(numeroE!=numeroA){
-                alert("NUMERO INCORRECTO!")
+                Swal.fire({
+                    title: 'NUMERO INCORRECTO!',
+                    icon: 'error',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#c1fa05'
+                });
                 errores++;
             }
 
